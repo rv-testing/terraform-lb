@@ -20,7 +20,7 @@ variable "dns_name" {
 
 variable "lb_ip_dns_name" {
   description = "DNS for Load Balancer IP"
-  default     = "lb"
+  default     = "lb01"
 }
 
 variable "location" {
