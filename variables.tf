@@ -86,7 +86,11 @@ variable "admin_password" {
   default     = "Commitchanges3"
 }
 
-subscription_id {}
-tenant_id {}
-client_id {}
-client_secret {}
+
+variable "subscription_id" {}
+
+variable "tenant_id" {}
+
+variable "client_id" {}
+
+variable "client_secret" {}
