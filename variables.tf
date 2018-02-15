@@ -10,6 +10,7 @@ variable "rg_prefix" {
 
 variable "hostname" {
   description = "VM name referenced also in storage-related names."
+  default     = "vm"
 }
 
 variable "dns_name" {
