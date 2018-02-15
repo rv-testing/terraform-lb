@@ -69,10 +69,10 @@ resource "azurerm_lb_backend_address_pool" "backend_pool" {
 resource "azurerm_lb_nat_rule" "tcp" {
   resource_group_name            = "${azurerm_resource_group.rg.name}"
   loadbalancer_id                = "${azurerm_lb.lb.id}"
-  name                           = "RDP-VM-${count.index}"
+  name                           = "SSH-VM-${count.index}"
   protocol                       = "tcp"
   frontend_port                  = "5000${count.index + 1}"
-  backend_port                   = 3389
+  backend_port                   = 22
   frontend_ip_configuration_name = "LoadBalancerFrontEnd"
   count                          = 2
 }
