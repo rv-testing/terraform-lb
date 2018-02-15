@@ -1,5 +1,6 @@
 variable "resource_group" {
   description = "The name of the resource group in which to create the virtual network."
+  default     = "rglb1"
 }
 
 variable "rg_prefix" {
@@ -21,7 +22,7 @@ variable "lb_ip_dns_name" {
 
 variable "location" {
   description = "The location/region where the virtual network is created. Changing this forces a new resource to be created."
-  default     = "southcentralus"
+  default     = "canadaeast"
 }
 
 variable "virtual_network_name" {
@@ -51,22 +52,22 @@ variable "storage_replication_type" {
 
 variable "vm_size" {
   description = "Specifies the size of the virtual machine."
-  default     = "Standard_D1"
+  default     = "Standard_DS1_v2"
 }
 
 variable "image_publisher" {
   description = "name of the publisher of the image (az vm image list)"
-  default     = "MicrosoftWindowsServer"
+  default     = "OpenLogic"
 }
 
 variable "image_offer" {
   description = "the name of the offer (az vm image list)"
-  default     = "WindowsServer"
+  default     = "CentOS"
 }
 
 variable "image_sku" {
   description = "image sku to apply (az vm image list)"
-  default     = "2012-R2-Datacenter"
+  default     = "7.4"
 }
 
 variable "image_version" {
@@ -76,11 +77,12 @@ variable "image_version" {
 
 variable "admin_username" {
   description = "administrator user name"
-  default     = "vmadmin"
+  default     = "venerari"
 }
 
 variable "admin_password" {
   description = "administrator password (recommended to disable password auth)"
+  default     = "Commitchanges3"
 }
 
 subscription_id = "${var.subscription_id}"
