@@ -63,7 +63,7 @@ resource "azurerm_managed_disk" "test" {
  resource_group_name  = "${azurerm_resource_group.test.name}"
  storage_account_type = "Standard_LRS"
  create_option        = "Empty"
- disk_size_gb         = "1023"
+ disk_size_gb         = "100"
 }
 
 resource "azurerm_availability_set" "avset" {
@@ -106,7 +106,7 @@ resource "azurerm_virtual_machine" "test" {
    managed_disk_type = "Standard_LRS"
    create_option     = "Empty"
    lun               = 0
-   disk_size_gb      = "1023"
+   disk_size_gb      = "100"
  }
 
  storage_data_disk {
@@ -119,12 +119,11 @@ resource "azurerm_virtual_machine" "test" {
 
  os_profile {
    computer_name  = "hostname"
-   admin_username = "venerari"
-   admin_password = "Newhireguide1"
+   admin_username = "${var.admin_user}"
  }
 
  os_profile_linux_config {
-   disable_password_authentication = false
+   disable_password_authentication = true
     ssh_keys {
             path     = "/home/venerari/.ssh/authorized_keys"
             key_data = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbFiwnxFj92Ma4ce5XKlfpWY/y/FMAOOwtTyGDX8jtyUXiPMYDaKixFqxMZTizFpihafh48RMwDlfT9NWxthvKrv+4uDcPXJhgi1Jwxe7kg/0dk8FbVwxxpY9GLAj5ctqlQ09rkrtymdXx4XxoB5ZlCmwWnRCV5gdJlPUYzepWo0b5Vqf6vAfO2NeCIXt886f8J9aAczhu7WyXnKmvUSOhzJwTyLLjtNXA9BYjNSggcKq381FmdNSi1xP/OTODanB8SIqC6COX8il0ia4U6QNeztJGbN0XMdkHw5uRF3AiABNwdiYJy9wmc8oa9LV2dQ9HsB1KtdjmmvTdnQkj27b9 itikabc@centos"
