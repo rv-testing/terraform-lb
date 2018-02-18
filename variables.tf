@@ -85,7 +85,7 @@ variable "admin_username" {
 
 variable "admin_password" {
   description = "administrator password (recommended to disable password auth)"
-  default     = "Commitchanges3"
+  default     = "Ab1234567890"
 }
 
 
