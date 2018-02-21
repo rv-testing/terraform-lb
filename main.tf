@@ -1,4 +1,4 @@
- provider "azurerm" {
+provider "azurerm" {
    subscription_id = "${var.subscription_id}"
    tenant_id = "${var.tenant_id}"
    client_id = "${var.client_id}"
@@ -139,13 +139,16 @@ resource "azurerm_virtual_machine" "vm" {
   }
 
   os_profile {
-    computer_name  = "${var.hostname}"
-    admin_username = "${var.admin_username}"
-    admin_password = "${var.admin_password}"
-  }
+    computer_name  = "vm${count.index}"
+    admin_username = "${var.adminuser}"
+    }
  
   os_profile_linux_config {
-    disable_password_authentication = false
+    disable_password_authentication = true
+     ssh_keys {
+            path     = "/home/${var.adminuser}/.ssh/authorized_keys"
+            key_data = "${var.sshkey}"
+        }
   }
 }
 
@@ -174,19 +177,6 @@ resource "azurerm_network_security_group" "my-nsg" {
         source_address_prefix      = "*"
         destination_address_prefix = "*"
     }
-
-   security_rule {
-        name                       = "80"
-        priority                   = 1002
-        direction                  = "Inbound"
-        access                     = "Allow"
-        protocol                   = "Tcp"
-        source_port_range          = "*"
-        destination_port_range     = "80"
-        source_address_prefix      = "*"
-        destination_address_prefix = "*"
-    }
-
 }
 
 # third nic
@@ -205,8 +195,8 @@ resource "azurerm_network_interface" "third-nic" {
 }
 
 # vm-manager
-resource "azurerm_virtual_machine" "vm-manager" {
-  name                  = "vm-manager"
+resource "azurerm_virtual_machine" "vmdb" {
+  name                  = "vmdb"
   location              = "${var.location}"
   resource_group_name   = "${azurerm_resource_group.rg.name}"
   vm_size               = "${var.vm_size}"
@@ -227,12 +217,15 @@ resource "azurerm_virtual_machine" "vm-manager" {
     }
 
   os_profile {
-    computer_name  = "${var.hostname}"
-    admin_username = "${var.admin_username}"
-    admin_password = "${var.admin_password}"
+    computer_name  = "vmdb"
+    admin_username = "${var.adminuser}"
   }
  
   os_profile_linux_config {
-    disable_password_authentication = false
+    disable_password_authentication = true
+     ssh_keys {
+            path     = "/home/${var.adminuser}/.ssh/authorized_keys"
+            key_data = "${var.sshkey}"
+        }
   }
 }
