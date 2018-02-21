@@ -7,5 +7,5 @@ output "vm_fqdn" {
 }
 
 output "ssh_command" {
-  value = "ssh ${var.admin_username}@${azurerm_public_ip.lbpip.fqdn}"
+  value = "ssh ${var.adminuser}@${azurerm_public_ip.lbpip.fqdn}"
 }
