@@ -78,14 +78,13 @@ variable "image_version" {
   default     = "latest"
 }
 
-variable "admin_username" {
+variable "adminuser" {
   description = "administrator user name"
   default     = "venerari"
 }
 
-variable "admin_password" {
-  description = "administrator password (recommended to disable password auth)"
-  default     = "Ab1234567890"
+variable "sshkey" {
+  default     = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3wEj3JIukPxtqDinfn8yucd6Wa2A4KYu9YM8OnUQlDnKUGEchUZhXJ6xcJUbuC5p85uXi9yqUWtQ2gnlg3g0zML/+L2EgL/6Gf0jjboaJQb1zpQzUUoEj8XTnSsGSK54RKTBMI+EQQsZdfl/3C1PM5wpq4B/yJYMd/qlFSDhQF9FHD/PZO3Vzah/3PdffMtW0xlLLV/IGJu94ePWXiZtE3v9KB4YKBxP172PmkeWjBcB2I/dXiJv7XoQ2rzy2yO7SuO/1laD5Why2EX3iZdu3XwtqBcJbox9TTDGheEnuW3L0yXe7vtO2cVe9a3rK6WmStwDOJAadhkoAnlz8tNB9 leno@cc-e55f-779b89c1-211599045-j4dlt"
 }
 
 
