@@ -232,11 +232,11 @@ resource "azurerm_virtual_machine" "vmdb" {
 }
 
 #INSTALL SCRIPT (LIMITED TO 6 ONLY)
-resource "azurerm_virtual_machine_extension" "scripts" {
-  name                 = "myvm"
-  location             = "${var.access_location}"
-  resource_group_name  = "${azurerm_resource_group.myterraformgroup.name}"
-  virtual_machine_name = "${azurerm_virtual_machine.myterraformvm.name}"
+resource "azurerm_virtual_machine_extension" "scripts1" {
+  name                 = "vmdbext"
+  location             = "${var.location}"
+  resource_group_name  = "${azurerm_resource_group.rg.name}"
+  virtual_machine_name = "${azurerm_virtual_machine.vmdb.name}"
   publisher            = "Microsoft.OSTCExtensions"
   type                 = "CustomScriptForLinux"
   type_handler_version = "1.2"
@@ -249,10 +249,10 @@ SETTINGS
 }
 
 resource "azurerm_virtual_machine_extension" "scripts2" {
-  name                 = "myvm"
-  location             = "${var.access_location}"
-  resource_group_name  = "${azurerm_resource_group.myterraformgroup.name}"
-  virtual_machine_name = "${azurerm_virtual_machine.myterraformvm.name}"
+  name                 = "vmdbext"
+  location             = "${var.location}"
+  resource_group_name  = = "${azurerm_resource_group.rg.name}"
+  virtual_machine_name = "${azurerm_virtual_machine.vmdb.name}"
   publisher            = "Microsoft.OSTCExtensions"
   type                 = "CustomScriptForLinux"
   type_handler_version = "1.2"
@@ -265,10 +265,10 @@ SETTINGS
 }
 
 resource "azurerm_virtual_machine_extension" "scripts3" {
-  name                 = "myvm"
-  location             = "${var.access_location}"
-  resource_group_name  = "${azurerm_resource_group.myterraformgroup.name}"
-  virtual_machine_name = "${azurerm_virtual_machine.myterraformvm.name}"
+  name                 = "vmdbext"
+  location             = "${var.location}"
+  resource_group_name  = "${azurerm_resource_group.rg.name}"
+  virtual_machine_name = "${azurerm_virtual_machine.vmdb.name}"
   publisher            = "Microsoft.OSTCExtensions"
   type                 = "CustomScriptForLinux"
   type_handler_version = "1.2"
@@ -280,11 +280,11 @@ resource "azurerm_virtual_machine_extension" "scripts3" {
 SETTINGS
 }
 
-resource "azurerm_virtual_machine_extension" "scripts3" {
-  name                 = "myvm"
-  location             = "${var.access_location}"
-  resource_group_name  = "${azurerm_resource_group.myterraformgroup.name}"
-  virtual_machine_name = "${azurerm_virtual_machine.myterraformvm.name}"
+resource "azurerm_virtual_machine_extension" "scripts4" {
+  name                 = "vmdbext"
+  location             = "${var.location}"
+  resource_group_name  = "${azurerm_resource_group.rg.name}"
+  virtual_machine_name = "${azurerm_virtual_machine.vmdb.name}"
   publisher            = "Microsoft.OSTCExtensions"
   type                 = "CustomScriptForLinux"
   type_handler_version = "1.2"
