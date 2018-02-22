@@ -55,7 +55,7 @@ so that it easy to reference like ***"terraform apply --var-file=../terraform.tf
 
 First grab the reposity using git.<br>
 
-### $ git clone http://gitlab-scm.52.235.39.185.nip.io/tso-mto-gitlab/terraform-lb.git<br>
+### $ git clone https://github.com/tso-terraform/terraform-lb.git<br>
 
 It will create a directory terraform1/ and change directory to it.<br>
 Update the ssh by copying your own ssh.
