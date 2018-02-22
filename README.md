@@ -44,11 +44,11 @@ Retrying role assignment creation: 2/36<br>
 <br>
 Grab the appid, the password which is the clientsecret and the tenantid.<br>
 Put it on the terraform.tfvars.<br>
-access_subscriptid = "xxxxxxxxxxxxxxxxxxx"<br>
-access_appid = "aaaaaaaaaaaaaaaaaa"<br>
-access_clientsecret = "ppppppppppppppp"<br>
-access_tenantid = "yyyyyyyyyyyyyyyyyyyyyy"<br>
-access_location = "canadaeast"<br>
+subscriptid = "xxxxxxxxxxxxxxxxxxx"<br>
+appid = "aaaaaaaaaaaaaaaaaa"<br>
+clientsecret = "ppppppppppppppp"<br>
+tenantid = "yyyyyyyyyyyyyyyyyyyyyy"<br>
+location = "canadaeast"<br>
 <br>
 The terraform.tfvars can also be used by other templates, since you only need one credentials.  Usually you put it outside the folder of development/UAT/production
 so that it easy to reference like ***"terraform apply --var-file=../terraform.tfvars"***.
