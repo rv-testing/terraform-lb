@@ -57,7 +57,7 @@ First grab the reposity using git.<br>
 
 ### $ git clone https://github.com/tso-terraform/terraform-lb.git<br>
 
-It will create a directory terraform1/ and change directory to it.<br>
+It will create a directory terraform-lb/ and change directory to it.<br>
 Update the ssh by copying your own ssh.
 
 ## $ cd terraform-lb<br>
