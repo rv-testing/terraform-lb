@@ -190,7 +190,7 @@ resource "azurerm_network_interface" "third-nic" {
         name                          = "myNicConfig"
         subnet_id                     = "${azurerm_subnet.subnet.id}"
         private_ip_address_allocation = "dynamic"
-        public_ip_address_id          = "${azurerm_public_ip.vm-manager-publicip.id}"
+        public_ip_address_id          = "${azurerm_public_ip.vmdb-publicip.id}"
     }
 }
 
