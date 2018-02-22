@@ -80,7 +80,8 @@ This will create terraform.tfstate which is very important not to touch it, insi
 This is also important to backup this file and you can transfer it to another client.  If you have a template that you are not sure updated or sync,<br>
 use the command ***"terraform apply -state=terraform.tfstate"*** to make sure it execute properly the current codes, otherwise it might remove or add resources you
 don't want.<br>
-***The epel-release is usually version 7.9, you need to update it to 7.11.***<br>
+***The epel-release is usually version 7.9, you need to update it to 7.11.***
+
 Terraform discourage you to install so many scripts, I think it's limited to 6 only and only simple script you can do.<br>
 It recommend you to either script an image or use an image from the your cloud or use ansible-playbook to install software.
 
