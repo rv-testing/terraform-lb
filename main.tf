@@ -152,15 +152,15 @@ resource "azurerm_virtual_machine" "vm" {
   }
 }
 
-# Create public IPs
-resource "azurerm_public_ip" "vm-manager-publicip" {
+# Create public IPs vmdb
+resource "azurerm_public_ip" "vmdb-publicip" {
     name                         = "myPublicIP"
     location                     = "${var.location}"
     resource_group_name          = "${azurerm_resource_group.rg.name}"
     public_ip_address_allocation = "dynamic"
 }
 
-# Create NSG rule for vm-manager
+# Create NSG rule for vmdb
 resource "azurerm_network_security_group" "my-nsg" {
     name                = "myNetworkSecurityGroup"
     location            = "${var.location}"
@@ -179,7 +179,7 @@ resource "azurerm_network_security_group" "my-nsg" {
     }
 }
 
-# third nic
+# third nic vmdb
 resource "azurerm_network_interface" "third-nic" {
     name                      = "third-nic"
     location                  = "${var.location}"
