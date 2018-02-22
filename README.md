@@ -83,7 +83,8 @@ don't want.<br>
 ***The epel-release is usually version 7.9, you need to update it to 7.11.***
 
 Terraform discourage you to install so many scripts, I think it's limited to 6 only and only simple script you can do.<br>
-It recommend you to either script an image or use an image from the your cloud or use ansible-playbook to install software.
+It recommend you to either create an image or use an image from the cloud or use an ansible-playbook to install software<br>
+to your vm.
 
 <br>
 ---do your testing---<br>
