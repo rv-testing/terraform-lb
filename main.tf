@@ -194,11 +194,12 @@ resource "azurerm_network_interface" "third-nic" {
     }
 }
 
-# vm-manager
+# vmdb
 resource "azurerm_virtual_machine" "vmdb" {
   name                  = "vmdb"
   location              = "${var.location}"
   resource_group_name   = "${azurerm_resource_group.rg.name}"
+  availability_set_id   = "${azurerm_availability_set.avset.id}" 
   vm_size               = "${var.vm_size}"
   network_interface_ids = ["${azurerm_network_interface.third-nic.id}"]
   
