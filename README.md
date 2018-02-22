@@ -74,7 +74,7 @@ didn't put the proper vm images publisher or sku or offer.<br>
 ### $ terraform plan<br>
 
 
-### $ terraform apply<br>
+### $ terraform apply --var-file=terraform.tfvars<br>
 
 This will create terraform.tfstate which is very important not to touch it, inside it have all the json format what was executed on the terraform.<br> 
 This is also important to backup this file and you can transfer it to another client.  If you have a template that you are not sure updated or sync,<br>
@@ -87,7 +87,7 @@ don't want.<br>
 
 This will destroy the whole resources group on the templates code including the resource region itself.<br>
 
-### $ terraform destroy<br>
+### $ terraform destroy --var-file=terraform.tfvars -state=terraform.tfstate<br>
  
 If you want updated template all the time and you want to just delet the vm, then remove the vm procedures on the template and run again<br> 
 another "terraform appy".  It should destroy the vm only.  But if you want to delete a subnet and it is being used by the vm,<br> 
