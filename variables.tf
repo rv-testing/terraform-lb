@@ -84,7 +84,7 @@ variable "adminuser" {
 }
 
 variable "sshkey" {
-  default     = "put-your-own-sshkey-public"
+  default     = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbFiwnxFj92Ma4ce5XKlfpWY/y/FMAOOwtTyGDX8jtyUXiPMYDaKixFqxMZTizFpihafh48RMwDlfT9NWxthvKrv+4uDcPXJhgi1Jwxe7kg/0dk8FbVwxxpY9GLAj5ctqlQ09rkrtymdXx4XxoB5ZlCmwWnRCV5gdJlPUYzepWo0b5Vqf6vAfO2NeCIXt886f8J9aAczhu7WyXnKmvUSOhzJwTyLLjtNXA9BYjNSggcKq381FmdNSi1xP/OTODanB8SIqC6COX8il0ia4U6QNeztJGbN0XMdkHw5uRF3AiABNwdiYJy9wmc8oa9LV2dQ9HsB1KtdjmmvTdnQkj27b9"
 }
 
 
