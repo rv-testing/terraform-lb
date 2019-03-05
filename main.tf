@@ -137,6 +137,13 @@ resource "azurerm_virtual_machine" "vm" {
     name          = "osdisk${count.index}"
     create_option = "FromImage"
   }
+   
+  storage_data_disk {
+        name          = "vmdisk1"
+        disk_size_gb  = "3"
+        create_option = "empty"
+        lun           = 1
+  }
 
   os_profile {
     computer_name  = "vm${count.index}"
@@ -217,6 +224,13 @@ resource "azurerm_virtual_machine" "vmdb" {
         managed_disk_type = "Standard_LRS"
     }
 
+  storage_data_disk {
+        name          = "vmdb_disk1"
+        disk_size_gb  = "3"
+        create_option = "empty"
+        lun           = 2
+  }
+      
   os_profile {
     computer_name  = "vmdb"
     admin_username = "${var.adminuser}"
